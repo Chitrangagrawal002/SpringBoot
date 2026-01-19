@@ -3,12 +3,18 @@ package com.example.day2_part2.controller;
 import com.example.day2_part2.model.StudentModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import java.util.ArrayList;
 @RestController
 public class Home {
     @GetMapping("/")
-    public StudentModel getStudent(){
-        StudentModel student = new StudentModel(1, "Chitrang", "chitrang@gmail.com");
-        return student;
+    public ArrayList<StudentModel> getStudents(){
+        ArrayList<StudentModel> students = new ArrayList<>();
+        students.add(new StudentModel(1,"Chitrang","abc1@xyz.com"));
+        students.add(new StudentModel(2,"Nitendra","abc2@xyz.com"));
+        students.add(new StudentModel(3,"Ayush","abc3@xyz.com"));
+        students.add(new StudentModel(4,"Divyansh","abc4@xyz.com"));
+        students.add(new StudentModel(5,"Mohan","abc5@xyz.com"));
+
+        return students;
     }
 }
